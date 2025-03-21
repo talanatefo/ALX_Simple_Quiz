@@ -1,18 +1,17 @@
-function checkAnswer() {
-  let radioButtons = document.getElementsByName("quiz");
-  let correctAnswer = "4";
-  let userAnswer = null;
-  for (let i = 0; i < radioButtons.length; i++) {
-    if (radioButtons[i].checked) {
-      userAnswer = radioButtons[i].value;
-    }
+//let temp = document.querySelector('input[name="quiz"]');
 
-    let feedback = document.getElementById("feedback");
-    if (userAnswer == correctAnswer) {
-      feedback.textContent = "Correct! Well done.";
-    } else if (userAnswer !== correctAnswer) {
-      feedback.textContent = "That's incorrect. Try again!";
-    }
+//console.log(temp.value);
+
+function checkAnswer() {
+  let correctAnswer = "4";
+  let userAnswer = document.querySelector('input[name="quiz"]:checked').value;
+  console.log(userAnswer);
+
+  let feedback = document.getElementById("feedback");
+  if (userAnswer == correctAnswer) {
+    feedback.textContent = "Correct! Well done.";
+  } else if (userAnswer !== correctAnswer) {
+    feedback.textContent = "That's incorrect. Try again!";
   }
 }
 
